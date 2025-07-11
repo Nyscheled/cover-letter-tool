@@ -210,7 +210,6 @@
 
             // Handle generate button click
             generateBtn.addEventListener('click', async () => {
-                const formData = new FormData(form);
                 const userDetails = {
                     name: document.getElementById('full-name').value,
                     email: document.getElementById('email').value,
@@ -232,6 +231,20 @@
                 spinnerContainer.classList.add('flex');
                 generateBtn.disabled = true;
                 loadingText.textContent = 'Gathering details...';
+                
+                // --- IMPORTANT: API KEY IS NOW ADDED ---
+                const apiKey = "AIzaSyCusDvrNhUaAsNiOpcrpWyfaKvRJQZUSsc";
+                // -----------------------------------------
+
+                if (apiKey === "PASTE_YOUR_API_KEY_HERE") {
+                    showMessage("API Key is missing. Please add it to the HTML file.");
+                    btnText.classList.remove('hidden');
+                    spinnerContainer.classList.add('hidden');
+                    spinnerContainer.classList.remove('flex');
+                    generateBtn.disabled = false;
+                    return;
+                }
+
 
                 const prompt = `
                 Write a professional and compelling generic cover letter based on the following user-provided details. The letter should be well-structured with an introduction, body, and conclusion. It should highlight the user's skills and accomplishments effectively.
@@ -254,7 +267,6 @@
                     let chatHistory = [];
                     chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                     const payload = { contents: chatHistory };
-                    const apiKey = ""; // API key is handled by the environment
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                     
                     const response = await fetch(apiUrl, {
