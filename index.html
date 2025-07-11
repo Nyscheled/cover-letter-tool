@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO and Sharing Meta Tags -->
+    <title>Cover Letter Generator from Questionnaire | Edit & Download</title>
+    <meta name="description" content="Answer a few simple questions to generate a professional cover letter. Edit your draft, choose a template, and download as a PDF.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cover Letter Generator from Questionnaire">
+    <meta property="og:description" content="Answer a few simple questions to generate a professional cover letter.">
+    <meta property="og:image" content="https://placehold.co/1200x630/3b82f6/ffffff?text=Cover+Letter+From+Questions">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Cover Letter Generator from Questionnaire">
+    <meta property="twitter:description" content="Answer a few simple questions to generate a professional cover letter.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/3b82f6/ffffff?text=Cover+Letter+From+Questions">
+
+    <!-- Stylesheets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .spinner { border-top-color: #3498db; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* Template Styles */
+        .template-preview {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .template-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .template-preview.selected {
+            box-shadow: 0 0 0 3px #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        /* Cover Letter Editor Styles */
+        #cover-letter-editor {
+            border: 1px solid #d1d5db;
+            padding: 2rem;
+            min-height: 500px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        /* Template Font Styles */
+        .template-professional { font-family: 'Lora', serif; font-size: 16px; line-height: 1.6; }
+        .template-modern { font-family: 'Roboto', sans-serif; font-size: 15px; line-height: 1.7; }
+        .template-simple { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.8; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-5xl">
+        
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">Your New Cover Letter, Made Easy</h1>
+            <p class="text-lg text-gray-600 mt-3 max-w-3xl mx-auto">Create a professional cover letter by answering a few questions. No resume needed!</p>
+        </header>
+
+        <!-- How it Works Section -->
+        <section class="mb-12 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+             <h2 class="text-2xl font-bold text-gray-800 mb-4">How It Works</h2>
+             <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                <li><span class="font-semibold">Answer a Few Questions:</span> Fill out the short form below about your skills and experience.</li>
+                <li><span class="font-semibold">Generate a Draft:</span> Our tool will use your answers to write a professional cover letter for you.</li>
+                <li><span class="font-semibold">Edit & Download:</span> Make any changes you like, choose a template, and download your finished letter as a PDF.</li>
+             </ol>
+        </section>
+
+        <!-- Main Content -->
+        <main class="bg-white p-8 rounded-2xl shadow-lg">
+            <!-- Step 1: Questionnaire Form -->
+            <form id="questionnaire-form">
+                <section aria-labelledby="input-heading">
+                    <h2 id="input-heading" class="text-2xl font-semibold mb-6 text-gray-800">Step 1: Tell Us About Yourself</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label for="full-name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="full-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="e.g., Jane Doe" required>
+                        </div>
+                        <!-- Contact Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Contact Email</label>
+                            <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="e.g., jane.doe@example.com" required>
+                        </div>
+                        <!-- Most Recent Job Title -->
+                        <div>
+                            <label for="job-title" class="block text-sm font-medium text-gray-700">Most Recent Job Title</label>
+                            <input type="text" id="job-title" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="e.g., Senior Project Manager" required>
+                        </div>
+                        <!-- Years of Experience -->
+                        <div>
+                            <label for="experience" class="block text-sm font-medium text-gray-700">Years of Experience</label>
+                            <input type="text" id="experience" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="e.g., 8 years">
+                        </div>
+                        <!-- Key Skills -->
+                        <div class="md:col-span-2">
+                            <label for="skills" class="block text-sm font-medium text-gray-700">Your Top 3-5 Skills</label>
+                            <input type="text" id="skills" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="e.g., Data Analysis, Team Leadership, Python" required>
+                            <p class="mt-2 text-xs text-gray-500">Separate skills with a comma.</p>
+                        </div>
+                        <!-- Key Accomplishments -->
+                        <div class="md:col-span-2">
+                            <label for="accomplishments" class="block text-sm font-medium text-gray-700">2-3 Key Accomplishments</label>
+                            <textarea id="accomplishments" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="- Led a project that increased efficiency by 15%&#10;- Managed a team of 5 to launch a new product&#10;- Received the 'Innovator of the Year' award" required></textarea>
+                             <p class="mt-2 text-xs text-gray-500">Put each accomplishment on a new line.</p>
+                        </div>
+                    </div>
+                </section>
+            </form>
+
+            <!-- Action Button -->
+            <div class="text-center mt-10">
+                <button id="generate-btn" class="bg-blue-600 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:bg-gray-400 disabled:cursor-not-allowed">
+                    <span id="btn-text">Generate Cover Letter</span>
+                    <div id="spinner-container" class="hidden items-center justify-center">
+                        <div class="spinner w-6 h-6 border-4 rounded-full"></div>
+                        <span id="loading-text" class="ml-3">Generating...</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Step 2 & 3: Output and Edit Section -->
+            <section id="output-section" class="mt-12 hidden" aria-live="polite">
+                <div class="space-y-8">
+                    <!-- Edit -->
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">Step 2: Edit Your Draft</h2>
+                        <p class="text-gray-600 mb-4">Your cover letter draft is ready. Click inside the box below to make any changes you need.</p>
+                        <div id="cover-letter-editor" contenteditable="true" class="p-6 border border-gray-300 rounded-lg bg-white whitespace-pre-wrap template-professional"></div>
+                    </div>
+                    
+                    <!-- Template Selection -->
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4 text-gray-800">Step 3: Choose a Template & Download</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" id="template-selector">
+                            <div class="template-preview border rounded-lg p-4 cursor-pointer text-center selected" data-template="template-professional">
+                                <h3 class="font-bold">Professional</h3>
+                                <p class="text-sm text-gray-500">A classic, serif font style.</p>
+                            </div>
+                            <div class="template-preview border rounded-lg p-4 cursor-pointer text-center" data-template="template-modern">
+                                <h3 class="font-bold">Modern</h3>
+                                <p class="text-sm text-gray-500">A clean, sans-serif look.</p>
+                            </div>
+                            <div class="template-preview border rounded-lg p-4 cursor-pointer text-center" data-template="template-simple">
+                                <h3 class="font-bold">Simple</h3>
+                                <p class="text-sm text-gray-500">Minimalist and straightforward.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Download Button -->
+                    <div class="text-center pt-4">
+                        <button id="download-btn" class="bg-green-600 text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
+                            Download as PDF
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>Powered by Gemini</p>
+        </footer>
+    </div>
+
+    <!-- Message Box for Notifications -->
+    <div id="message-box" class="hidden fixed top-5 right-5 bg-red-500 text-white py-3 px-5 rounded-lg shadow-lg text-lg" role="alert" aria-live="assertive">
+        <p id="message-text"></p>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Element selectors
+            const form = document.getElementById('questionnaire-form');
+            const generateBtn = document.getElementById('generate-btn');
+            const btnText = document.getElementById('btn-text');
+            const spinnerContainer = document.getElementById('spinner-container');
+            const loadingText = document.getElementById('loading-text');
+            const outputSection = document.getElementById('output-section');
+            const editor = document.getElementById('cover-letter-editor');
+            const templateSelector = document.getElementById('template-selector');
+            const downloadBtn = document.getElementById('download-btn');
+            const messageBox = document.getElementById('message-box');
+            const messageText = document.getElementById('message-text');
+
+            // Show a message to the user
+            function showMessage(message) {
+                messageText.textContent = message;
+                messageBox.classList.remove('hidden');
+                setTimeout(() => { messageBox.classList.add('hidden'); }, 4000);
+            }
+
+            // Handle generate button click
+            generateBtn.addEventListener('click', async () => {
+                const formData = new FormData(form);
+                const userDetails = {
+                    name: document.getElementById('full-name').value,
+                    email: document.getElementById('email').value,
+                    jobTitle: document.getElementById('job-title').value,
+                    experience: document.getElementById('experience').value,
+                    skills: document.getElementById('skills').value,
+                    accomplishments: document.getElementById('accomplishments').value
+                };
+
+                // Simple validation
+                if (!userDetails.name || !userDetails.email || !userDetails.jobTitle || !userDetails.skills || !userDetails.accomplishments) {
+                    showMessage('Please fill out all required fields.');
+                    return;
+                }
+
+                // Show loading state
+                btnText.classList.add('hidden');
+                spinnerContainer.classList.remove('hidden');
+                spinnerContainer.classList.add('flex');
+                generateBtn.disabled = true;
+                loadingText.textContent = 'Gathering details...';
+
+                const prompt = `
+                Write a professional and compelling generic cover letter based on the following user-provided details. The letter should be well-structured with an introduction, body, and conclusion. It should highlight the user's skills and accomplishments effectively.
+
+                **User Details:**
+                - Full Name: ${userDetails.name}
+                - Contact Email: ${userDetails.email}
+                - Most Recent Job Title: ${userDetails.jobTitle}
+                - Years of Experience: ${userDetails.experience}
+                - Key Skills: ${userDetails.skills}
+                - Key Accomplishments: 
+                ${userDetails.accomplishments}
+
+                **Generated Cover Letter:**
+                (Start the cover letter here. Include the user's name and email at the top. Do not add placeholders like "[Your Name]" if the actual name is provided.)
+                `;
+                
+                try {
+                    loadingText.textContent = 'Writing your draft...';
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // API key is handled by the environment
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) throw new Error(`API request failed: ${response.status}`);
+
+                    const result = await response.json();
+                    
+                    if (result.candidates?.[0]?.content?.parts?.[0]?.text) {
+                        const generatedText = result.candidates[0].content.parts[0].text;
+                        editor.innerText = generatedText; // Use innerText to preserve line breaks
+                        outputSection.classList.remove('hidden');
+                        outputSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        throw new Error("Invalid response from API.");
+                    }
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    showMessage('Failed to generate cover letter. Please try again.');
+                } finally {
+                    // Hide loading state
+                    btnText.classList.remove('hidden');
+                    spinnerContainer.classList.add('hidden');
+                    spinnerContainer.classList.remove('flex');
+                    generateBtn.disabled = false;
+                }
+            });
+
+            // Handle template selection
+            templateSelector.addEventListener('click', (e) => {
+                const target = e.target.closest('.template-preview');
+                if (!target) return;
+
+                templateSelector.querySelectorAll('.template-preview').forEach(el => el.classList.remove('selected'));
+                target.classList.add('selected');
+
+                const templateClass = target.dataset.template;
+                editor.className = 'p-6 border border-gray-300 rounded-lg bg-white whitespace-pre-wrap'; // Reset classes
+                editor.classList.add(templateClass);
+            });
+
+            // Handle download button click
+            downloadBtn.addEventListener('click', () => {
+                if (typeof jspdf === 'undefined' || typeof html2canvas === 'undefined') {
+                    showMessage('Download library is still loading. Please wait a moment.');
+                    return;
+                }
+                const { jsPDF } = jspdf;
+                const pdf = new jsPDF('p', 'pt', 'a4');
+                const source = document.getElementById('cover-letter-editor');
+                
+                // Temporarily remove shadow for cleaner PDF capture
+                const originalShadow = source.style.boxShadow;
+                source.style.boxShadow = 'none';
+
+                html2canvas(source, { 
+                    scale: 2, // Higher scale for better quality
+                    useCORS: true 
+                }).then((canvas) => {
+                    source.style.boxShadow = originalShadow; // Restore shadow
+                    const imgData = canvas.toDataURL('image/png');
+                    const imgProps = pdf.getImageProperties(imgData);
+                    const pdfWidth = pdf.internal.pageSize.getWidth() - 80; // A4 width in points with margin
+                    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                    pdf.addImage(imgData, 'PNG', 40, 40, pdfWidth, pdfHeight);
+                    pdf.save('cover-letter.pdf');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
